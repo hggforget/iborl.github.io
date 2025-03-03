@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks">
+  <meta name="keywords" content="robot manipulation, Embodied AI">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+        displayMath: [ ['$$', '$$'], ['\\[', '\\]'] ],
+        processEscapes: true, 
+        tags: 'all',
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
+  <style>
+  .custom-button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin-right: 10px; /* 调整按钮之间的间距 */
+    border-radius: 30px;
+    overflow: hidden; /* 确保内容不会溢出 */
+  }
+
+  .custom-button .button-logo {
+    width: 30px; /* 调整 logo 的宽度以适应按钮 */
+    height: auto;
+    margin-right: 10px; /* 调整 logo 与文本之间的间距 */
+    /* border-radius: 30px; */
+    border-radius: 50%; /* 确保 logo 是圆的 */
+    object-fit: contain; /* 确保图片在其容器内适当缩放 */
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border: 5px solid #bbb;
+    border-radius: 20px;
+    margin: 0 auto; /* Center the video container */
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+  
+
+</head>
+<body>
+
+
+
+<section class="section" id="Title">
+  <div class="container is-max-desktop">
+    <div class="content">
+      <!-- <div class="columns is-centered"> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Dexterous Hand Manipulation via Efficient Imitation-Bootstrapped Online Reinforcement Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block"><strong>JD Explore Academy</strong></span> -->
+            <p style="text-align: center; margin-top: 10px; font-size: 30px;"><strong><a href="https://www.jdcloud.com/cn/explore"  target="_blank">JD Explore Academy</a></strong></p>
+          </div>
+          <!-- <div class="is-size-5 publication-authors">
+            <img src="asserts/jdlogo.png" alt="Stanford University" style="width: 250px; height: auto; margin-top: 20px;">
+          </div> -->
+          <div class="buttons are-medium is-centered" style="margin-top: 20px;">
+            <a href="http://box.jd.com/sharedInfo/1147DC284DDAEE91DC759E209F58DD60" class="button custom-button">
+              <img src="asserts/datasetlogo.png" alt="Logo" class="button-logo">
+              Datasets
+            </a>
+            <a href="https://www.jdcloud.com/cn/pages/explore-JDManiData?hideHeader=true" class="button custom-button">
+              <img src="asserts/homelogo.png" alt="Logo" class="button-logo">
+              Home
+            </a>
+            <a href="https://arxiv.org/pdf/2405.18860" class="button custom-button">
+              <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
+              Paper
+            </a>
+            <a href="https://github.com/Louis-ZhangLe/BRMData" class="button custom-button">
+              <img src="asserts/codelogo.png" alt="Logo" class="button-logo">
+              Code
+            </a>
+            <a href="./LICENSE" class="button custom-button">
+              <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
+              License
+            </a>
+          </div>   
+          <div class="content has-text-justified" style="display: flex; justify-content: center;">
+            <iframe width="1105" height="383" src="https://www.youtube.com/embed/SE_3k2bqQ9o" 
+              title="Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks" 
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>            
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section" id="News">
+  <div class="container">
+    <div class="content">
+      <h2 class="title is-4" style="text-align: center;">News</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <p style="text-align: center;"><span style="font-weight:bold;">&#8226; 2024/08:</span> We have collected data for 5 new manipulation tasks.</p>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-one-third">
+              <div class="video-container" style="width: 350px; margin: 0 auto;">
+                <iframe src="https://www.youtube.com/embed/q7uKNw7GFIA" 
+                  title="New Task 1" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen></iframe>
+              </div>
+              <p style="text-align: center; margin-top: 10px; font-size: 18px;"><strong>Play with a Rubik's Cube</strong></p>
+            </div>
+            <div class="column is-one-third">
+              <div class="video-container" style="width: 350px; margin: 0 auto;">
+                <iframe src="https://www.youtube.com/embed/zXy3udm9QpQ" 
+                  title="New Task 2" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen></iframe>
+              </div>
+              <p style="text-align: center; margin-top: 10px; font-size: 18px;"><strong>Get a cup of hot water</strong></p>
+            </div>
+          </div>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-one-third">
+              <div class="video-container" style="width: 350px; margin: 0 auto;">
+                <iframe src="https://www.youtube.com/embed/vaWyHdszKqU" 
+                  title="New Task 1" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen></iframe>
+              </div>
+              <p style="text-align: center; margin-top: 10px; font-size: 18px;"><strong>Charge the iPhone</strong></p>
+            </div>
+            <div class="column is-one-third">
+              <div class="video-container" style="width: 350px; margin: 0 auto;">
+                <iframe src="https://www.youtube.com/embed/Uzjf-ckn4io" 
+                  title="New Task 2" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen></iframe>
+              </div>
+              <p style="text-align: center; margin-top: 10px; font-size: 18px;"><strong>Hand a cup of tea to a person.</strong></p>
+            </div>
+          </div>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-one-third">
+              <div class="video-container" style="margin: 0 auto;">
+                <iframe src="https://www.youtube.com/embed/MSbsHKh8gZY" 
+                  title="Video 3" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen></iframe>
+              </div>
+              <p style="text-align: center; margin-top: 10px; font-size: 18px;"><strong>Pick up a cup and place a tea bag inside</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section" id="Abstract">
+<div class="container is-max-desktop">
+<div class="content">
+    <!-- Using HTML to center the abstract -->
+    <div class="columns is-centered has-text-centered">
+        <!-- <div class="column is-four-fifths"> -->
+        <div class="column" style="width: 85%;">
+            <!-- <h2>Abstract</h2> -->
+            <h2 class="title is-2" style="text-align: center;">Abstract</h2>
+            <!-- <div class="content has-text-justified"> -->
+            <div class="content has-text-justified" style="background-color: #f5f5f5; padding: 1.5em; border-radius: 5px;">
+              Dexterous hand manipulation in real-world scenarios presents considerable challenges due to its demands for both dexterity and precision. While imitation learning approaches have thoroughly examined these challenges, they still require a significant number of expert demonstrations and are limited by a constrained performance upper bound. In this paper, we propose a novel and efficient Imitation-Bootstrapped Online Reinforcement Learning (IBORL) method tailored for robotic dexterous hand manipulation in real-world environments. Specifically, we pretrain the policy using a limited set of expert demonstrations and subsequently finetune this policy through direct reinforcement learning in the real world. To address the catastrophic forgetting issues that arise from the distribution shift between expert demonstrations and real-world environments, we introduce a regularization term that balances the exploration of novel behaviors with the preservation of the pretrained policy. Our experiments with real-world tasks demonstrate that our method significantly outperforms existing approaches, achieving an almost 100% success rate and a 23% improvement in cycle time. Furthermore, our method is adept at uncovering superior policies in comparison to those obtained solely by imitating expert demonstrations via reinforcement learning.
+            </div>
+            <img src="static/image/overview.png" alt="Descriptive Alt Text" style="width:100%; height:auto;">
+        </div>
+    </div>
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+          <h2>Tasks</h2>
+      </div>
+    </div> -->
+</div>
+</section>
+
+<section class="section" id="AutonomousSkills">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Autonomous Skills</h2>
+    <div class="columns is-centered">
+      <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/lfKNUghlpOg?si=Ko53AqLSUwlheSko" 
+            title="Bottle Pick" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Bottle Pick</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/jkKc2PiD5i4?si=m_rCQ9v-3t1Pzl3J" 
+            title="Bottle Handoff" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Bottle Handoff</strong></p>
+      </div>
+    </div>
+    <!-- ########################################## Plate Place Cup Place -->
+    <div class="columns is-centered">
+      <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/BsoC9zrFSHI?si=ewpGsckC3RpLDHhj" 
+            title="Plate Place" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Plate Place</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/IzQEQ8_dQqM?si=iiOarlhj5ZVTtPnU" 
+            title="Cup Place" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Cup Place</strong></p>
+      </div>
+    </div>
+    <!-- ########################################## Fruit Handover Wine Wipe -->
+    <div class="columns is-centered">
+      <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/Nr_M9sHerIg" 
+            title="Fruit Handover" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Fruit Handover</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/kUjOKY-cq1I" 
+            title="Wine Wipe" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Wine Wipe</strong></p>
+      </div>
+    </div>
+    <!-- ########################################## Single Fruit Pick Multiple Fruits Pick -->
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/K4sa7_czvuQ" 
+            title="Single Fruit Pick" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Single Fruit Pick</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/x8J-1EkF9_Q" 
+            title="Multiple Fruits Pick" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Multiple Fruits Pick</strong></p>
+      </div>
+    </div>
+    <!-- ########################################## High Five / Garbage Recycle -->
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/Cfwq_9ECm9E" 
+            title="High Five" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>High Five</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/-9PpBEsHids" 
+            title="Garbage Recycle" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Garbage Recycle</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="Failures">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Failures</h2>
+    <div class="columns is-centered">
+      <div class="column is-three-fifths is-centered has-text-centered">
+        <p>Using the BRMData dataset, we have observed several instances of failure. These documented failures provide critical insights into the challenges and limitations inherent in integrating robotic hardware and Embodied AI technologies.</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-three-fifths is-centered has-text-centered">
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/t94H8zZcKzs?si=RU8Kgo7ycTXAsE3p" 
+          title="Bimanual-mobile robot manipulation failures" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="titile">BibTeX</h2>
+    <pre><code>@inproceedings{zhang2024empowering,
+  author    = {Zhang, Tianle and Li, Dongjiang and Li, Yihang and Zeng, Zecui and Zhao, Lin and Sun, Lei and Chen, Yue and Wei, Xuelong and Zhan, Yibing and Li, Lusong and He, Xiaodong},
+  title     = {Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks},
+  booktitle = {arXiv},
+  year      = {2024},
+}</code></pre>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p><strong>To access the <a href="http://box.jd.com/sharedInfo/1147DC284DDAEE91DC759E209F58DD60" target="_blank">official dataset</a>, please refer to the access password provided in the research paper.</strong></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
