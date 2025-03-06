@@ -202,15 +202,15 @@
               <img src="asserts/homelogo.png" alt="Logo" class="button-logo">
               Home
             </a> -->
-            <!-- <a href="https://arxiv.org/pdf/2405.18860" class="button custom-button">
+            <a href="https://arxiv.org/pdf/2405.18860" class="button custom-button" onclick="event.preventDefault(); alert('Coming soon');">
               <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
               Paper
-            </a> -->
-            <!-- <a href="https://github.com/Louis-ZhangLe/BRMData" class="button custom-button">
+            </a>
+            <a href="https://github.com/Louis-ZhangLe/BRMData" class="button custom-button" onclick="event.preventDefault(); alert('Coming soon');">
               <img src="asserts/codelogo.png" alt="Logo" class="button-logo">
               Code
             </a>
-            <a href="./LICENSE" class="button custom-button">
+            <!-- <a href="./LICENSE" class="button custom-button">
               <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
               License
             </a> -->
@@ -310,10 +310,7 @@
             <div class="content has-text-justified" style="background-color: #f5f5f5; padding: 1.5em; border-radius: 5px;">
               Dexterous hand manipulation in real-world scenarios presents considerable challenges due to its demands for both dexterity and precision. While imitation learning approaches have thoroughly examined these challenges, they still require a significant number of expert demonstrations and are limited by a constrained performance upper bound. In this paper, we propose a novel and efficient Imitation-Bootstrapped Online Reinforcement Learning (IBORL) method tailored for robotic dexterous hand manipulation in real-world environments. Specifically, we pretrain the policy using a limited set of expert demonstrations and subsequently finetune this policy through direct reinforcement learning in the real world. To address the catastrophic forgetting issues that arise from the distribution shift between expert demonstrations and real-world environments, we introduce a regularization term that balances the exploration of novel behaviors with the preservation of the pretrained policy. Our experiments with real-world tasks demonstrate that our method significantly outperforms existing approaches, achieving an almost 100% success rate and a 23% improvement in cycle time. Furthermore, our method is adept at uncovering superior policies in comparison to those obtained solely by imitating expert demonstrations via reinforcement learning.
             </div>
-            <object data="/static/image/overview.svg" 
-              type="image/svg+xml"
-              style="width:100%">
-            </object>
+            <img src="static/image/overview.svg" alt="Descriptive Alt Text" style="width:100%; height:auto;">
         </div>
     </div>
     <!-- <div class="columns is-centered has-text-centered">
@@ -328,6 +325,7 @@
   
   <div class="container">
     <h2 class="title is-2" style="text-align: center;">Experiments</h2>
+    <div class="columns is-centered">
     <table class="comparison-table">
       <thead>
         <tr>
@@ -395,6 +393,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <div class="divider_container">
       <div class="divider">Grab Cup</div>
     </div>
@@ -407,7 +406,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(Ours)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup (Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -417,7 +416,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(BC)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup (BC)</strong></p>
       </div>
     </div>
     <!-- ########################################## Plate Place Cup Place -->
@@ -433,7 +432,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(Ours)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube (Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -443,7 +442,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(BC)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube (BC)</strong></p>
       </div>
     </div>
     <!-- ########################################## Fruit Handover Wine Wipe -->
@@ -459,7 +458,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(Ours)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy (Ours)</strong></p>
       </div>
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -469,7 +468,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(BC)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy (BC)</strong></p>
       </div>
 
     </div>
@@ -486,7 +485,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(Ours)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner (Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -496,7 +495,7 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(BC)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner (BC)</strong></p>
       </div>
     </div>
 
@@ -513,7 +512,7 @@
           referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen></iframe>
       </div>
-      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(ACT)</strong></p>
+      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube (ACT)</strong></p>
     </div>
     <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
       <div class="video-container" style="margin: 0 auto;">
@@ -523,7 +522,7 @@
           referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen></iframe>
       </div>
-      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(ACT)</strong></p>
+      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup (ACT)</strong></p>
     </div>
   </div>
 </div>
