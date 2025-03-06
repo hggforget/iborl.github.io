@@ -99,10 +99,10 @@
             <img src="asserts/jdlogo.png" alt="Stanford University" style="width: 250px; height: auto; margin-top: 20px;">
           </div> -->
           <div class="buttons are-medium is-centered" style="margin-top: 20px;">
-            <a href="http://box.jd.com/sharedInfo/1147DC284DDAEE91DC759E209F58DD60" class="button custom-button">
+            <!-- <a href="http://box.jd.com/sharedInfo/1147DC284DDAEE91DC759E209F58DD60" class="button custom-button">
               <img src="asserts/datasetlogo.png" alt="Logo" class="button-logo">
               Datasets
-            </a>
+            </a> -->
             <a href="https://www.jdcloud.com/cn/pages/explore-JDManiData?hideHeader=true" class="button custom-button">
               <img src="asserts/homelogo.png" alt="Logo" class="button-logo">
               Home
@@ -121,8 +121,8 @@
             </a>
           </div>   
           <div class="content has-text-justified" style="display: flex; justify-content: center;">
-            <iframe width="1105" height="383" src="https://www.youtube.com/embed/SE_3k2bqQ9o" 
-              title="Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks" 
+            <iframe width="1105" height="383" src="https://www.youtube.com/embed/syozU6q0KBg?si=qASwetGgoyr9nigB" 
+              title="Dexterous Hand Manipulation via Efficient Imitation-Bootstrapped Online Reinforcement Learning" 
               frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>            
@@ -215,7 +215,10 @@
             <div class="content has-text-justified" style="background-color: #f5f5f5; padding: 1.5em; border-radius: 5px;">
               Dexterous hand manipulation in real-world scenarios presents considerable challenges due to its demands for both dexterity and precision. While imitation learning approaches have thoroughly examined these challenges, they still require a significant number of expert demonstrations and are limited by a constrained performance upper bound. In this paper, we propose a novel and efficient Imitation-Bootstrapped Online Reinforcement Learning (IBORL) method tailored for robotic dexterous hand manipulation in real-world environments. Specifically, we pretrain the policy using a limited set of expert demonstrations and subsequently finetune this policy through direct reinforcement learning in the real world. To address the catastrophic forgetting issues that arise from the distribution shift between expert demonstrations and real-world environments, we introduce a regularization term that balances the exploration of novel behaviors with the preservation of the pretrained policy. Our experiments with real-world tasks demonstrate that our method significantly outperforms existing approaches, achieving an almost 100% success rate and a 23% improvement in cycle time. Furthermore, our method is adept at uncovering superior policies in comparison to those obtained solely by imitating expert demonstrations via reinforcement learning.
             </div>
-            <img src="static/image/overview.png" alt="Descriptive Alt Text" style="width:100%; height:auto;">
+            <object data="/static/image/overview.svg" 
+              type="image/svg+xml"
+              style="width:100%">
+            </object>
         </div>
     </div>
     <!-- <div class="columns is-centered has-text-centered">
@@ -226,29 +229,29 @@
 </div>
 </section>
 
-<section class="section" id="AutonomousSkills">
+<section class="section" id="Experiments">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Autonomous Skills</h2>
+    <h2 class="title is-2" style="text-align: center;">Experiments</h2>
     <div class="columns is-centered">
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
           <iframe src="https://www.youtube.com/embed/lfKNUghlpOg?si=Ko53AqLSUwlheSko" 
-            title="Bottle Pick" 
+            title="Pinch Cube(Ours)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Bottle Pick</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
           <iframe src="https://www.youtube.com/embed/jkKc2PiD5i4?si=m_rCQ9v-3t1Pzl3J" 
-            title="Bottle Handoff" 
+            title="Grab Cub(Ours)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Bottle Handoff</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cub(Ours)</strong></p>
       </div>
     </div>
     <!-- ########################################## Plate Place Cup Place -->
@@ -261,92 +264,116 @@
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Plate Place</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
           <iframe src="https://www.youtube.com/embed/IzQEQ8_dQqM?si=iiOarlhj5ZVTtPnU" 
-            title="Cup Place" 
+            title="Take Loopy(Ours)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Cup Place</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(Ours)</strong></p>
       </div>
     </div>
     <!-- ########################################## Fruit Handover Wine Wipe -->
     <div class="columns is-centered">
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/Nr_M9sHerIg" 
-            title="Fruit Handover" 
+          <iframe src="https://www.youtube.com/embed/ACsMCUC2-kM?si=6RPEoZ6GjVpshxLu" 
+            title="Take Loopy(BC)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Fruit Handover</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(BC)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/kUjOKY-cq1I" 
-            title="Wine Wipe" 
+          <iframe src="https://www.youtube.com/embed/RSJJfXnKWHQ?si=FZXoFuLFkimIXbcG" 
+            title="Grab Scanner(BC)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Wine Wipe</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(BC)</strong></p>
       </div>
     </div>
     <!-- ########################################## Single Fruit Pick Multiple Fruits Pick -->
     <div class="columns is-centered">
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/K4sa7_czvuQ" 
-            title="Single Fruit Pick" 
+          <iframe src="https://www.youtube.com/embed/3yOLRDtKOC0?si=u8ZQegWlHwKcHgRS" 
+            title="Grab Cup(BC)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Single Fruit Pick</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(BC)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/x8J-1EkF9_Q" 
-            title="Multiple Fruits Pick" 
+            <iframe src="https://www.youtube.com/embed/neyavLP7cA4?si=lR-mf9K3MXaFl1W8" 
+            title="Pinch Cube(BC)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Multiple Fruits Pick</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(BC)</strong></p>
       </div>
     </div>
     <!-- ########################################## High Five / Garbage Recycle -->
     <div class="columns is-centered">
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/Cfwq_9ECm9E" 
-            title="High Five" 
+          <iframe src="https://www.youtube.com/embed/DvyugbCSRvA?si=BnsjKE059vpH1D_Y" 
+            title="Take Loopy(ACT)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>High Five</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(ACT)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/-9PpBEsHids" 
-            title="Garbage Recycle" 
+            <iframe src="https://www.youtube.com/embed/zMI5uPlNRMA?si=Jhq44QeNuK9KSz39" 
+            title="Pinch Cube(ACT)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Garbage Recycle</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(ACT)</strong></p>
       </div>
     </div>
   </div>
+   <!-- ########################################## High Five / Garbage Recycle -->
+   <div class="columns is-centered">
+    <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+      <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/hhQXy0B_KO4?si=96-CUigU_OQnnzrY" 
+          title="Grab Scanner(ACT)" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
+      </div>
+      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(ACT)</strong></p>
+    </div>
+    <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+      <div class="video-container" style="margin: 0 auto;">
+         <iframe src="https://www.youtube.com/embed/HJV3mnM0t-k?si=b3CNc1tRrnliWsal" 
+          title="Grab Cup(ACT)" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
+      </div>
+      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(ACT)</strong></p>
+    </div>
+  </div>
+</div>
 </section>
 
-<section class="section" id="Failures">
+<!-- <section class="section" id="Failures">
   <div class="container">
     <h2 class="title is-2" style="text-align: center;">Failures</h2>
     <div class="columns is-centered">
@@ -365,9 +392,9 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container content">
     <h2 class="titile">BibTeX</h2>
     <pre><code>@inproceedings{zhang2024empowering,
@@ -377,17 +404,17 @@
   year      = {2024},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <p><strong>To access the <a href="http://box.jd.com/sharedInfo/1147DC284DDAEE91DC759E209F58DD60" target="_blank">official dataset</a>, please refer to the access password provided in the research paper.</strong></p>
     </div>
   </div>
-</footer>
+</footer> -->
 
 </body>
 </html>
