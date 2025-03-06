@@ -35,8 +35,103 @@
     type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
   </script>
-
+<style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 0.75em;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .comparison-table thead th {
+    background-color: #f8f9fa;
+    border-top: 2px solid #666;
+    border-bottom: 2px solid #666;
+  }
+  
+  .comparison-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .comparison-table sup {
+    font-size: 0.8em;
+    vertical-align: super;
+  }
+  
+  .comparison-table strong {
+    color: #2c3e50;
+  }
+  </style>
   <style>
+    .divider_container {
+    text-align: center; /* 确保父容器水平居中 */
+    }
+    .divider {
+        /* 新增或修改的样式 */
+        text-align: center; /* 水平居中 */
+        line-height: 1.5;   /* 调整行高确保垂直居中 */
+        padding: 0.3rem 1.2rem; /* 增加上下内边距 */
+        /* 原有其他样式保持不变 */
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        color: #4a4a4a;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        z-index: 1;
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(to bottom, 
+            rgba(255,255,255,0.9) 30%,
+            rgba(245,245,245,0.9) 100%);
+        border-radius: 999px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        margin-bottom: 30px;
+    }
+    .divider::before, .divider::after {
+        content: ''; /* 确保内容为空 */
+        position: absolute;
+        top: 50%;
+        width: 100%; /* 使用百分比来确保伪元素长度 */
+        height: 1px;
+        background-color: #ccc;
+        z-index: -1;
+        transform: translateY(-50%); /* 确保伪元素垂直居中 */
+    }
+    .divider::before {
+      left: -110%;
+    }
+
+    .divider::after {
+      right: -110%;
+    }
+
+    /* 悬停动效 */
+    .divider:hover {
+        color: #363636;
+        letter-spacing: 0.12em;
+        transform: scale(1.02);
+        background: rgba(255,255,255,0.95);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+        .divider {
+            font-size: 0.9rem;
+            padding: 0 0.8rem;
+            letter-spacing: 0.08em;
+        }
+    }
   .custom-button {
     background-color: black;
     color: white;
@@ -103,22 +198,22 @@
               <img src="asserts/datasetlogo.png" alt="Logo" class="button-logo">
               Datasets
             </a> -->
-            <a href="https://www.jdcloud.com/cn/pages/explore-JDManiData?hideHeader=true" class="button custom-button">
+            <!-- <a href="https://www.jdcloud.com/cn/pages/explore-JDManiData?hideHeader=true" class="button custom-button">
               <img src="asserts/homelogo.png" alt="Logo" class="button-logo">
               Home
-            </a>
-            <a href="https://arxiv.org/pdf/2405.18860" class="button custom-button">
+            </a> -->
+            <!-- <a href="https://arxiv.org/pdf/2405.18860" class="button custom-button">
               <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
               Paper
-            </a>
-            <a href="https://github.com/Louis-ZhangLe/BRMData" class="button custom-button">
+            </a> -->
+            <!-- <a href="https://github.com/Louis-ZhangLe/BRMData" class="button custom-button">
               <img src="asserts/codelogo.png" alt="Logo" class="button-logo">
               Code
             </a>
             <a href="./LICENSE" class="button custom-button">
               <img src="asserts/paperlogo.png" alt="Logo" class="button-logo">
               License
-            </a>
+            </a> -->
           </div>   
           <div class="content has-text-justified" style="display: flex; justify-content: center;">
             <iframe width="1105" height="383" src="https://www.youtube.com/embed/syozU6q0KBg?si=qASwetGgoyr9nigB" 
@@ -230,8 +325,105 @@
 </section>
 
 <section class="section" id="Experiments">
+  
   <div class="container">
     <h2 class="title is-2" style="text-align: center;">Experiments</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th rowspan="2">Method</th>
+          <th colspan="2"><strong>Grab Cup</strong></th>
+          <th colspan="2"><strong>Pinch Cube</strong></th>
+          <th colspan="2"><strong>Grab Scanner</strong></th>
+          <th colspan="2"><strong>Take Loopy</strong></th>
+        </tr>
+        <tr>
+          <th>SR (%)</th>
+          <th>Cycle Time</th>
+          <th>SR (%)</th>
+          <th>Cycle Time</th>
+          <th>SR (%)</th>
+          <th>Cycle Time</th>
+          <th>SR (%)</th>
+          <th>Cycle Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BC</td>
+          <td>70.0</td>
+          <td>122.21</td>
+          <td>7.5</td>
+          <td>129.67</td>
+          <td>80.0</td>
+          <td>204.25</td>
+          <td>95.0</td>
+          <td>116.11</td>
+        </tr>
+        <tr>
+          <td>SERL</td>
+          <td>0</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>IBORL<sup>†</sup></td>
+          <td>0</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>N/A</td>
+          <td><strong>100.0</strong></td>
+          <td><strong>101.8</strong></td>
+        </tr>
+        <tr>
+          <td><strong>IBORL (Ours)</strong></td>
+          <td><strong>87.5</strong></td>
+          <td><strong>68.51</strong></td>
+          <td><strong>90.0</strong></td>
+          <td><strong>110.55</strong></td>
+          <td><strong>90.0</strong></td>
+          <td><strong>147.19</strong></td>
+          <td><strong>100.0</strong></td>
+          <td>115.55</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="divider_container">
+      <div class="divider">Grab Cup</div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/jkKc2PiD5i4?si=m_rCQ9v-3t1Pzl3J" 
+            title="Grab Cub(Ours)" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(Ours)</strong></p>
+      </div>
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/3yOLRDtKOC0?si=u8ZQegWlHwKcHgRS" 
+            title="Grab Cup(BC)" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(BC)</strong></p>
+      </div>
+    </div>
+    <!-- ########################################## Plate Place Cup Place -->
+    <div class="divider_container">
+      <div class="divider">Pinch Cube</div>
+    </div>
     <div class="columns is-centered">
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -245,16 +437,19 @@
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/jkKc2PiD5i4?si=m_rCQ9v-3t1Pzl3J" 
-            title="Grab Cub(Ours)" 
+            <iframe src="https://www.youtube.com/embed/neyavLP7cA4?si=lR-mf9K3MXaFl1W8" 
+            title="Pinch Cube(BC)" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
             allowfullscreen></iframe>
         </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cub(Ours)</strong></p>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(BC)</strong></p>
       </div>
     </div>
-    <!-- ########################################## Plate Place Cup Place -->
+    <!-- ########################################## Fruit Handover Wine Wipe -->
+    <div class="divider_container">
+      <div class="divider">Take Loopy</div>
+    </div>
     <div class="columns is-centered">
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -266,19 +461,6 @@
         </div>
         <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(Ours)</strong></p>
       </div>
-      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
-        <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/IzQEQ8_dQqM?si=iiOarlhj5ZVTtPnU" 
-            title="Take Loopy(Ours)" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(Ours)</strong></p>
-      </div>
-    </div>
-    <!-- ########################################## Fruit Handover Wine Wipe -->
-    <div class="columns is-centered">
       <div class="column is-two-fifths content has-text-justified" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
           <iframe src="https://www.youtube.com/embed/ACsMCUC2-kM?si=6RPEoZ6GjVpshxLu" 
@@ -288,6 +470,23 @@
             allowfullscreen></iframe>
         </div>
         <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(BC)</strong></p>
+      </div>
+
+    </div>
+    <!-- ########################################## Single Fruit Pick Multiple Fruits Pick -->
+    <div class="divider_container">
+      <div class="divider">Grab Scanner</div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
+        <div class="video-container" style="margin: 0 auto;">
+          <iframe src="https://www.youtube.com/embed/IzQEQ8_dQqM?si=iiOarlhj5ZVTtPnU" 
+            title="Take Loopy(Ours)" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(Ours)</strong></p>
       </div>
       <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
         <div class="video-container" style="margin: 0 auto;">
@@ -300,64 +499,21 @@
         <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(BC)</strong></p>
       </div>
     </div>
-    <!-- ########################################## Single Fruit Pick Multiple Fruits Pick -->
-    <div class="columns is-centered">
-      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
-        <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/3yOLRDtKOC0?si=u8ZQegWlHwKcHgRS" 
-            title="Grab Cup(BC)" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Cup(BC)</strong></p>
-      </div>
-      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
-        <div class="video-container" style="margin: 0 auto;">
-            <iframe src="https://www.youtube.com/embed/neyavLP7cA4?si=lR-mf9K3MXaFl1W8" 
-            title="Pinch Cube(BC)" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(BC)</strong></p>
-      </div>
-    </div>
-    <!-- ########################################## High Five / Garbage Recycle -->
-    <div class="columns is-centered">
-      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
-        <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/DvyugbCSRvA?si=BnsjKE059vpH1D_Y" 
-            title="Take Loopy(ACT)" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Take Loopy(ACT)</strong></p>
-      </div>
-      <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
-        <div class="video-container" style="margin: 0 auto;">
-            <iframe src="https://www.youtube.com/embed/zMI5uPlNRMA?si=Jhq44QeNuK9KSz39" 
-            title="Pinch Cube(ACT)" 
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(ACT)</strong></p>
-      </div>
-    </div>
-  </div>
+
    <!-- ########################################## High Five / Garbage Recycle -->
+   <div class="divider_container">
+    <div class="divider">ACT</div>
+  </div>
    <div class="columns is-centered">
     <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
       <div class="video-container" style="margin: 0 auto;">
-          <iframe src="https://www.youtube.com/embed/hhQXy0B_KO4?si=96-CUigU_OQnnzrY" 
-          title="Grab Scanner(ACT)" 
+          <iframe src="https://www.youtube.com/embed/zMI5uPlNRMA?si=Jhq44QeNuK9KSz39" 
+          title="Pinch Cube(ACT)" 
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           referrerpolicy="strict-origin-when-cross-origin" 
           allowfullscreen></iframe>
       </div>
-      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Grab Scanner(ACT)</strong></p>
+      <p style="text-align: center; margin-top: 10px; font-size: 24px;"><strong>Pinch Cube(ACT)</strong></p>
     </div>
     <div class="column is-two-fifths is-centered has-text-centered" style="text-align: center;">
       <div class="video-container" style="margin: 0 auto;">
@@ -394,17 +550,17 @@
   </div>
 </section> -->
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container content">
     <h2 class="titile">BibTeX</h2>
-    <pre><code>@inproceedings{zhang2024empowering,
-  author    = {Zhang, Tianle and Li, Dongjiang and Li, Yihang and Zeng, Zecui and Zhao, Lin and Sun, Lei and Chen, Yue and Wei, Xuelong and Zhan, Yibing and Li, Lusong and He, Xiaodong},
-  title     = {Empowering Embodied Manipulation: A Bimanual-Mobile Robot Manipulation Dataset for Household Tasks},
+    <pre><code>@inproceedings{huang2025iborl,
+  author    = {Huang, Dongchi and Zhang, Tianle and Li, Yihang and Zhao, Ling and Li, Jiayi and Fang, Zhirui and Xia, Chunhe and Li, Lusong and He, Xiaodong},
+  title     = {Dexterous Hand Manipulation via Efficient Imitation-Bootstrapped Online Reinforcement Learning},
   booktitle = {arXiv},
-  year      = {2024},
+  year      = {2025},
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 
